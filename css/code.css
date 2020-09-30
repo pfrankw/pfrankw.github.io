@@ -1,0 +1,192 @@
+.markdown-body pre,
+.markdown-body .highlight {
+  margin: 0.8rem 0;
+  padding: 0.7rem 0.7rem;
+  overflow: auto;
+  font-size: 15px;
+  /*line-height: 1.3rem;*/
+  /*text-align: left;*/
+}
+.markdown-body .highlight .gutter pre,
+.markdown-body .highlight .gutter pre .line,
+.markdown-body .gist .gist-file .gist-data .line-numbers {
+  color: #666;
+}
+.markdown-body pre,
+.markdown-body code {
+  font-family: "Source Code Pro", Consolas, Menlo, Monaco, "Courier New", monospace;
+  font-weight: 400;
+  text-align: left;
+}
+.markdown-body code {
+  background: #eee;
+  padding: 1px 0.4rem;
+  border-radius: 2px;
+  margin: 0 0.2rem;
+  border: none;
+}
+.markdown-body pre code {
+  background: none;
+  text-shadow: none;
+  padding: 0;
+  color: #657b83;
+}
+.markdown-body .highlight {
+  border-radius: 4px;
+}
+.markdown-body .highlight pre {
+  border: none;
+  margin: 0;
+  padding: 0;
+}
+.markdown-body .highlight table {
+  margin: 0;
+  width: auto;
+}
+.markdown-body .highlight td {
+  border: none;
+  padding: 0;
+}
+.markdown-body .highlight figcaption {
+  color: highlight-comment;
+  line-height: 1em;
+  margin-bottom: 1em;
+}
+.markdown-body .highlight figcaption:before,
+.markdown-body .highlight figcaption:after {
+  content: "";
+  display: table;
+}
+.markdown-body .highlight figcaption:after {
+  clear: both;
+}
+.markdown-body .highlight figcaption a {
+  float: right;
+}
+.markdown-body .highlight .gutter pre {
+  text-align: right;
+  padding-right: 20px;
+}
+.markdown-body .highlight .gutter pre .line {
+  text-shadow: none;
+}
+.markdown-body .highlight .line {
+  color: #657b83;
+  min-height: 19px;
+}
+.markdown-body .highlight,
+.markdown-body pre {
+  background: #fdf6e3;
+  color: #657b83;
+}
+.markdown-body .highlight {
+  /* Solarized Green */
+  /* Solarized Cyan */
+  /* Solarized Blue */
+  /* Solarized Yellow */
+  /* Solarized Orange */
+  /* Solarized Red */
+}
+.markdown-body .highlight pre .comment,
+.markdown-body .highlight pre .quote {
+  color: #93a1a1;
+}
+.markdown-body .highlight pre .keyword,
+.markdown-body .highlight pre .selector-tag,
+.markdown-body .highlight pre .addition {
+  color: #859900;
+}
+.markdown-body .highlight pre .number,
+.markdown-body .highlight pre .string,
+.markdown-body .highlight pre .meta .meta-string,
+.markdown-body .highlight pre .literal,
+.markdown-body .highlight pre .doctag,
+.markdown-body .highlight pre .regexp {
+  color: #2aa198;
+}
+.markdown-body .highlight pre .title,
+.markdown-body .highlight pre .section,
+.markdown-body .highlight pre .name,
+.markdown-body .highlight pre .selector-id,
+.markdown-body .highlight pre .selector-class {
+  color: #268bd2;
+}
+.markdown-body .highlight pre .attribute,
+.markdown-body .highlight pre .attr,
+.markdown-body .highlight pre .variable,
+.markdown-body .highlight pre .template-variable,
+.markdown-body .highlight pre .class .title,
+.markdown-body .highlight pre .type {
+  color: #b58900;
+}
+.markdown-body .highlight pre .symbol,
+.markdown-body .highlight pre .bullet,
+.markdown-body .highlight pre .subst,
+.markdown-body .highlight pre .meta,
+.markdown-body .highlight pre .meta pre .keyword,
+.markdown-body .highlight pre .selector-attr,
+.markdown-body .highlight pre .selector-pseudo,
+.markdown-body .highlight pre .link {
+  color: #cb4b16;
+}
+.markdown-body .highlight pre .built_in,
+.markdown-body .highlight pre .deletion {
+  color: #dc322f;
+}
+.markdown-body .highlight pre .formula {
+  background: #eee8d5;
+}
+.markdown-body .highlight pre .emphasis {
+  font-style: italic;
+}
+.markdown-body .highlight pre .strong {
+  font-weight: bold;
+}
+.markdown-body .gist {
+  margin: 0 -20px;
+  border-style: solid;
+  border-color: #ddd;
+  border-width: 1px 0;
+  background: #272822;
+  padding: 15px 20px 15px 0;
+}
+.markdown-body .gist .gist-file {
+  border: none;
+  font-family: "Source Code Pro", Consolas, Monaco, Menlo, Consolas, monospace;
+  margin: 0;
+}
+.markdown-body .gist .gist-file .gist-data {
+  background: none;
+  border: none;
+}
+.markdown-body .gist .gist-file .gist-data .line-numbers {
+  background: none;
+  border: none;
+  padding: 0 20px 0 0;
+}
+.markdown-body .gist .gist-file .gist-data .line-data {
+  padding: 0 !important;
+}
+.markdown-body .gist .gist-file .highlight {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+.markdown-body .gist .gist-file .gist-meta {
+  background: #272822;
+  color: highlight-comment;
+  font: 0.85em "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-shadow: 0 0;
+  padding: 0;
+  margin-top: 1em;
+  margin-left: 20px;
+}
+.markdown-body .gist .gist-file .gist-meta a {
+  color: #258fb8;
+  font-weight: normal;
+}
+.markdown-body .gist .gist-file .gist-meta a:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=source/css/code.css.map */
