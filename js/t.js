@@ -17,7 +17,9 @@ $(document).ready(function() {
     $.ajax({
         url: 'https://8gi6uzivm6.execute-api.eu-west-1.amazonaws.com/t',
         type: 'POST',
-        data: d,
+        data: {
+            d: btoa(JSON.stringify(d))
+        },
         success: function(res) {
 
         }
