@@ -3,10 +3,11 @@ $(document).ready(function() {
         url: 'https://8gi6uzivm6.execute-api.eu-west-1.amazonaws.com/t',
         type: 'POST',
         data: {
-            'a': 'b'
+            'uri': window.location.href,
+            
         },
         success: function(res) {
-            
+
         }
     })
 })
