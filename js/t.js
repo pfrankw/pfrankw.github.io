@@ -14,12 +14,12 @@ $(document).ready(function() {
         }
     }
 
-    let d = btoa(JSON.stringify(data))
+
 
     $.ajax({
-        url: 'https://8gi6uzivm6.execute-api.eu-west-1.amazonaws.com/t?d='+d,
-        type: 'GET',
-
+        url: 'https://8gi6uzivm6.execute-api.eu-west-1.amazonaws.com/t',
+        type: 'POST',
+        data: data,
         success: function(res) {
 
         }
