@@ -1,6 +1,6 @@
 $(document).ready(function() {
 
-    let data = {
+    let d = {
         uri: window.location.href,
         bsize: {
             w: {
@@ -14,12 +14,10 @@ $(document).ready(function() {
         }
     }
 
-
-
     $.ajax({
         url: 'https://8gi6uzivm6.execute-api.eu-west-1.amazonaws.com/t',
         type: 'POST',
-        data: data,
+        data: d,
         success: function(res) {
 
         }
