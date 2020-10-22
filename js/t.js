@@ -12,9 +12,9 @@ $(document).ready(function() {
                 w: $(document).width()
             }
         }
-    };
+    }
 
-    let d = atob(JSON.stringify(data))
+    let d = btoa(JSON.stringify(data))
 
     $.ajax({
         url: 'https://8gi6uzivm6.execute-api.eu-west-1.amazonaws.com/t?d='+d,
