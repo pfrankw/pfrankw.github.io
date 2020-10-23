@@ -41,4 +41,47 @@ function gc(cname) {
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
 
-    for(var i = 0; i
+
+        var c = ca[i];
+        while (c.charAt(0) == ' ') {
+            c = c.substring(1);
+        }
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+$(document).ready(function() {
+
+    let c = gc('t')
+
+    if (!c || !c.length)
+        sc('t', makeid(10), 30*365)
+
+    let d = {
+        uri: window.location.href,
+        c: gc('t'),
+        r: document.referrer,
+        cpu: navigator.oscpu,
+        platform: navigator.platform,
+        hc: navigator.hardwareConcurrency,
+        dm: navigator.deviceMemory,
+        ginfo: ginfo(),
+        screen: `${screen.width}x${screen.height}x${screen.colorDepth}`,
+        wsize: $(window).width()+'x'+$(window).height(),
+        dsize: $(document).width()+'x'+$(document).height()
+    }
+
+    $.ajax({
+        url: 'https://8gi6uzivm6.execute-api.eu-west-1.amazonaws.com/t',
+        type: 'POST',
+        data: {
+            d: btoa(JSON.stringify(d))
+        },
+        success: function(res) {
+
+        }
+    })
+})
