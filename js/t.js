@@ -26,6 +26,7 @@ $(document).ready(function() {
         r: document.referrer,
         cpu: navigator.oscpu,
         platform: navigator.platform,
+        screen: screen.width+'x'+screen.height,
         bsize: {
             w: {
                 h: $(window).height(),
