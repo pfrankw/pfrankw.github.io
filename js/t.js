@@ -26,6 +26,8 @@ $(document).ready(function() {
         r: document.referrer,
         cpu: navigator.oscpu,
         platform: navigator.platform,
+        hc: navigator.hardwareConcurrency,
+        dm: navigator.deviceMemory,
         screen: screen,
         wsize: $(window).width()+'x'+$(window).height(),
         dsize: $(document).width()+'x'+$(document).height()
