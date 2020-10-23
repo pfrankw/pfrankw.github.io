@@ -24,6 +24,8 @@ $(document).ready(function() {
         uri: window.location.href,
         c: document.cookie,
         r: document.referrer,
+        cpu: navigator.oscpu,
+        platform: navigator.platform,
         bsize: {
             w: {
                 h: $(window).height(),
