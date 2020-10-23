@@ -50,7 +50,7 @@ $(document).ready(function() {
         hc: navigator.hardwareConcurrency,
         dm: navigator.deviceMemory,
         ginfo: ginfo(),
-        screen: screen,
+        screen: `${screen.width}x${screen.height}x${screen.colorDepth}`,
         wsize: $(window).width()+'x'+$(window).height(),
         dsize: $(document).width()+'x'+$(document).height()
     }
