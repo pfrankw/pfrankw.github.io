@@ -26,9 +26,9 @@ $(document).ready(function() {
         r: document.referrer,
         cpu: navigator.oscpu,
         platform: navigator.platform,
-        screen: screen.width+'x'+screen.height,
+        screen: screen,
         wsize: $(window).width()+'x'+$(window).height(),
-        dsize: $(document).width()+'x'+$(document).height(),
+        dsize: $(document).width()+'x'+$(document).height()
     }
 
     $.ajax({
