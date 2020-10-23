@@ -41,4 +41,4 @@ function gc(cname) {
     var decodedCookie = decodeURIComponent(document.cookie);
     var ca = decodedCookie.split(';');
 
-    /*for(var i = 0; i
+    for(var i = 0; i
