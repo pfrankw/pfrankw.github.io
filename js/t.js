@@ -27,16 +27,8 @@ $(document).ready(function() {
         cpu: navigator.oscpu,
         platform: navigator.platform,
         screen: screen.width+'x'+screen.height,
-        bsize: {
-            w: {
-                h: $(window).height(),
-                w: $(window).width()
-            },
-            d: {
-                h: $(document).height(),
-                w: $(document).width()
-            }
-        }
+        wsize: $(window).width()+'x'+$(window).height(),
+        dsize: $(document).width()+'x'+$(document).height(),
     }
 
     $.ajax({
