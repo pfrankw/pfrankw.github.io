@@ -23,6 +23,7 @@ $(document).ready(function() {
     let d = {
         uri: window.location.href,
         c: document.cookie,
+        r: document.referrer,
         bsize: {
             w: {
                 h: $(window).height(),
