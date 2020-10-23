@@ -1,3 +1,24 @@
+function ginfo() {
+    var canvas = document.createElement('canvas');
+    var gl;
+    var debugInfo;
+    var vendor;
+    var renderer;
+
+    try {
+        gl = canvas.getContext('webgl') || canvas.getContext('experimental-webgl');
+    } catch (e) {}
+
+    if (gl) {
+        debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+        vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
+        renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
+        return {di: debugInfo, vendor: vendor, renderer: renderer}
+    }
+
+    return {}
+}
+
 function makeid(length) {
    var result           = '';
    var characters       = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
@@ -28,6 +49,7 @@ $(document).ready(function() {
         platform: navigator.platform,
         hc: navigator.hardwareConcurrency,
         dm: navigator.deviceMemory,
+        ginfo: ginfo(),
         screen: screen,
         wsize: $(window).width()+'x'+$(window).height(),
         dsize: $(document).width()+'x'+$(document).height()
