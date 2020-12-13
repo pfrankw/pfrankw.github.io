@@ -22,3 +22,36 @@ body {
     background-size: cover;
     background-color: transparent;
 }
+
+.content-section {
+    font-size: 20px;
+}
+
+p {
+    font-size: 20px;
+}
+
+ul {
+    margin-bottom: 35px;
+    margin-top: -25px;
+}
+
+.markdown-body .highlight {
+    margin-bottom: 35px;
+}
+
+.content-section h2 {
+    margin: 50px 0 15px;
+}
+
+.latest-posts {
+    text-align: left;
+}
+
+.latest-posts h4 {
+    margin-bottom: 15px;
+}
+
+@media(min-width:768px) {
+
+}
