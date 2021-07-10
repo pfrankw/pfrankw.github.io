@@ -11,12 +11,14 @@ function ginfo() {
 
     if (gl) {
         debugInfo = gl.getExtension('WEBGL_debug_renderer_info');
+        if (!debugInfo)
+            return {};
         vendor = gl.getParameter(debugInfo.UNMASKED_VENDOR_WEBGL);
         renderer = gl.getParameter(debugInfo.UNMASKED_RENDERER_WEBGL);
         return {di: debugInfo, vendor: vendor, renderer: renderer}
     }
 
-    return {}
+    return {};
 }
 
 function makeid(length) {
