@@ -1,0 +1,51 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Francesco.cc</title>
+        <link>https://francesco.cc/posts/</link>
+        <description>All Posts | Francesco.cc</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 13 Dec 2020 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francesco.cc/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Discovering Life&#39;s Purpose Through Memento Mori: Reflections on Self-Expression</title>
+    <link>https://francesco.cc/discovering_lifes_purpose_through_memento_mori_reflections_on_self_expression/</link>
+    <pubDate>Sun, 13 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/discovering_lifes_purpose_through_memento_mori_reflections_on_self_expression/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/mementomori.jpg" referrerpolicy="no-referrer">
+            </div>Introduction This year has been a though one. And though times teach great things. I am somewhat scared of death, well not that much, but I am starting to respect it, and that&rsquo;s why I am going to write my thoughts here.
+&ldquo;Memento Mori&rdquo; would a stoic say.
+I always have been a very reserved guy, with all that opsec things in mind, but now the idea of leaving something about me, here on the internet, fascinates me.]]></description>
+</item>
+<item>
+    <title>Inline Hooking: A Technique for Modifying Function Behavior</title>
+    <link>https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/</link>
+    <pubDate>Sun, 22 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/inline_hooking.jpg" referrerpolicy="no-referrer">
+            </div>Introduction Inline hooking is a technique used to modify the behavior of functions in an application or operating system. It involves inserting code into the body of a function, and redirecting the flow of execution to the inserted code before or after the original function is executed.
+Inline hooking is often used in security-related applications, such as anti-virus software or intrusion detection systems, where it is necessary to monitor or alter the behavior of system-level functions.]]></description>
+</item>
+<item>
+    <title>Code Injection Techniques in Windows OS: A Step-by-Step Guide</title>
+    <link>https://francesco.cc/code_injection_techniques_in_windows_os/</link>
+    <pubDate>Sun, 27 May 2018 14:13:22 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/code_injection_techniques_in_windows_os/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/injection.jpg" referrerpolicy="no-referrer">
+            </div>Introduction The purpose of this document is to describe one of the most basic code injection techniques by using some of the APIs provided by the Windows operating system for process interaction.
+Code injection can be used in case it is necessary to make the detection of a payload more difficult within a compromised system, because it should not be sought inside a single process.
+It is possible to find an example of a more sophisticated use of the above technique into the “migrate” (ReflectiveLoader) feature of meterpreter, which completely moves the execution of the agent into a process chosen by the attacker.]]></description>
+</item>
+<item>
+    <title>About</title>
+    <link>https://francesco.cc/about/</link>
+    <pubDate>Wed, 23 May 2018 23:09:37 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/about/</guid>
+    <description><![CDATA[Ciao! I am Francesco, an independent cybersecurity researcher and developer with a deep love for the world of information technology. My journey began when I was just three years old, discovering the classic video game Prince of Persia on MS-DOS. From there, my fascination with computers grew, and I started to learn programming, starting with my favorite language, C.
+My expertise and interests lie in intelligence collection and analysis, distributed systems, and malware.]]></description>
+</item>
+</channel>
+</rss>

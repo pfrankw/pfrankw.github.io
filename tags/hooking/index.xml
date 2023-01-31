@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>hooking - Tag - Francesco.cc</title>
+        <link>https://francesco.cc/tags/hooking/</link>
+        <description>hooking - Tag - Francesco.cc</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 22 Sep 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francesco.cc/tags/hooking/" rel="self" type="application/rss+xml" /><item>
+    <title>Inline Hooking: A Technique for Modifying Function Behavior</title>
+    <link>https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/</link>
+    <pubDate>Sun, 22 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/inline_hooking.jpg" referrerpolicy="no-referrer">
+            </div>Introduction Inline hooking is a technique used to modify the behavior of functions in an application or operating system. It involves inserting code into the body of a function, and redirecting the flow of execution to the inserted code before or after the original function is executed.
+Inline hooking is often used in security-related applications, such as anti-virus software or intrusion detection systems, where it is necessary to monitor or alter the behavior of system-level functions.]]></description>
+</item>
+</channel>
+</rss>
