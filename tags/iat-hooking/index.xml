@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>IAT Hooking - Tag - Francesco.cc</title>
+        <link>https://francesco.cc/tags/iat-hooking/</link>
+        <description>IAT Hooking - Tag - Francesco.cc</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Mon, 15 Jul 2019 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francesco.cc/tags/iat-hooking/" rel="self" type="application/rss+xml" /><item>
+    <title>Introducing SSDR and IAT hooking: The basics</title>
+    <link>https://francesco.cc/introducing_ssdt_and_iat_hooking_the_basics/</link>
+    <pubDate>Mon, 15 Jul 2019 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/introducing_ssdt_and_iat_hooking_the_basics/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/hooks.jpg" referrerpolicy="no-referrer">
+            </div>Introduction Windows operating systems use system calls to interact with the underlying hardware and software components. System Service Dispatch Table (SSDT) hooking and Import Address Table (IAT) hooking are two techniques used to intercept and modify these system calls and imported functions, respectively.
+SSDT Hooking SSDT hooking involves modifying the SSDT, a table that contains the addresses of the system calls. This technique is useful for debugging, monitoring, and manipulating the behavior of the operating system and applications.]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>SolarWinds - Tag - Francesco.cc</title>
+        <link>https://francesco.cc/tags/solarwinds/</link>
+        <description>SolarWinds - Tag - Francesco.cc</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Wed, 13 Jan 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francesco.cc/tags/solarwinds/" rel="self" type="application/rss+xml" /><item>
+    <title>The SolarWinds Supply Chain Attack: Understanding the Threat and Protecting Your Organization</title>
+    <link>https://francesco.cc/the_solarwinds_supply_chain_attack_understanding_the_threat_and_protecting_your_organization/</link>
+    <pubDate>Wed, 13 Jan 2021 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/the_solarwinds_supply_chain_attack_understanding_the_threat_and_protecting_your_organization/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/sunburst.jpg" referrerpolicy="no-referrer">
+            </div>Introduction The SolarWinds supply chain attack, also known as the &ldquo;Sunburst&rdquo; attack, was a sophisticated cyber attack that took place in 2020. This attack used a sophisticated piece of malware that was embedded in a software update for the SolarWinds Orion network monitoring platform. The malware was used to compromise a large number of government and private organizations across the world.
+The Attack in Detail The attackers used a multi-stage approach to carry out this attack.]]></description>
+</item>
+</channel>
+</rss>

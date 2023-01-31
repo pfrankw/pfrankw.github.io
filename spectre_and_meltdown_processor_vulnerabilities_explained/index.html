@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Spectre and Meltdown: Processor Vulnerabilities Explained - Francesco.cc</title><meta name="Description" content="This blog post provides an overview of Spectre and Meltdown, two critical security vulnerabilities that affected computer processors in early 2018. It explains what they are, how they work, and provides steps to protect against them. The post aims to educate readers on the issue and help them stay informed and secure."><meta property="og:title" content="Spectre and Meltdown: Processor Vulnerabilities Explained" />
+<meta property="og:description" content="This blog post provides an overview of Spectre and Meltdown, two critical security vulnerabilities that affected computer processors in early 2018. It explains what they are, how they work, and provides steps to protect against them. The post aims to educate readers on the issue and help them stay informed and secure." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" /><meta property="og:image" content="https://francesco.cc/images/logo.svg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2020-06-17T00:00:00+00:00" />
+<meta property="article:modified_time" content="2020-06-17T00:00:00+00:00" /><meta property="og:site_name" content="Francesco.cc" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://francesco.cc/images/logo.svg"/>
+
+<meta name="twitter:title" content="Spectre and Meltdown: Processor Vulnerabilities Explained"/>
+<meta name="twitter:description" content="This blog post provides an overview of Spectre and Meltdown, two critical security vulnerabilities that affected computer processors in early 2018. It explains what they are, how they work, and provides steps to protect against them. The post aims to educate readers on the issue and help them stay informed and secure."/>
+<meta name="application-name" content="Francesco.cc">
+<meta name="apple-mobile-web-app-title" content="Francesco.cc"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" /><link rel="prev" href="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" /><link rel="next" href="https://francesco.cc/discovering_lifes_purpose_through_memento_mori_reflections_on_self_expression/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Spectre and Meltdown: Processor Vulnerabilities Explained",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/francesco.cc\/spectre_and_meltdown_processor_vulnerabilities_explained\/"
+        },"genre": "posts","keywords": "Spectre, Meltdown, Hardware, Vulnerability","wordcount":  536 ,
+        "url": "https:\/\/francesco.cc\/spectre_and_meltdown_processor_vulnerabilities_explained\/","datePublished": "2020-06-17T00:00:00+00:00","dateModified": "2020-06-17T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Francesco"},"author": {
+                "@type": "Person",
+                "name": "Francesco"
+            },"description": "This blog post provides an overview of Spectre and Meltdown, two critical security vulnerabilities that affected computer processors in early 2018. It explains what they are, how they work, and provides steps to protect against them. The post aims to educate readers on the issue and help them stay informed and secure."
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Francesco.cc"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.svg"
+        data-srcset="/images/logo.svg, /images/logo.svg 1.5x, /images/logo.svg 2x"
+        data-sizes="auto"
+        alt="/images/logo.svg"
+        title="/images/logo.svg" />Francesco.cc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/" title="About"> About </a><a class="menu-item" href="/posts/" title="Posts"> Posts </a><a class="menu-item" href="/tags/" title="Tags"> Tags </a><a class="menu-item" href="/categories/" title="Categories"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Francesco.cc"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.svg"
+        data-srcset="/images/logo.svg, /images/logo.svg 1.5x, /images/logo.svg 2x"
+        data-sizes="auto"
+        alt="/images/logo.svg"
+        title="/images/logo.svg" />Francesco.cc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="About">About</a><a class="menu-item" href="/posts/" title="Posts">Posts</a><a class="menu-item" href="/tags/" title="Tags">Tags</a><a class="menu-item" href="/categories/" title="Categories">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Spectre and Meltdown: Processor Vulnerabilities Explained</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Francesco</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2020-06-17">2020-06-17</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;536 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/spectre_meltdown.jpg"
+        data-srcset="/images/spectre_meltdown.jpg, /images/spectre_meltdown.jpg 1.5x, /images/spectre_meltdown.jpg 2x"
+        data-sizes="auto"
+        alt="/images/spectre_meltdown.jpg"
+        title="This blog post provides an overview of Spectre and Meltdown, two critical security vulnerabilities that affected computer processors in early 2018. It explains what they are, how they work, and provides steps to protect against them. The post aims to educate readers on the issue and help them stay informed and secure." /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#what-are-spectre-and-meltdown">What are Spectre and Meltdown?</a></li>
+    <li><a href="#how-do-they-work">How do they work?</a></li>
+    <li><a href="#protecting-against-spectre-and-meltdown">Protecting against Spectre and Meltdown</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="introduction">Introduction</h2>
+<p>In January 2018, the world of computing was shaken by the discovery of two major security vulnerabilities: Spectre and Meltdown. These two vulnerabilities affected computer processors in almost every device, including laptops, desktops, smartphones, and even cloud servers. In this post, we&rsquo;ll take a closer look at what Spectre and Meltdown are, how they work, and what can be done to protect against them.</p>
+<h2 id="what-are-spectre-and-meltdown">What are Spectre and Meltdown?</h2>
+<p>Spectre and Meltdown are two separate security vulnerabilities that exploit the way modern computer processors work. They both allow attackers to access sensitive information, such as passwords and encryption keys, that are stored in the memory of affected devices.</p>
+<p>Spectre is a vulnerability that affects processors made by Intel, AMD, and ARM. It allows an attacker to trick applications into accessing sensitive data that would normally be protected. The attacker can then use this data for malicious purposes, such as stealing sensitive information or compromising the security of the affected device.</p>
+<p>Meltdown, on the other hand, is a vulnerability that specifically affects Intel processors. It allows an attacker to bypass the security measures that protect the kernel, the core of the operating system, and access sensitive data stored in the memory of the affected device.</p>
+<h2 id="how-do-they-work">How do they work?</h2>
+<p>Spectre and Meltdown exploit the way computer processors handle instructions and data. They both take advantage of a technique known as speculative execution, which is used by processors to improve performance by executing instructions before they are actually needed.</p>
+<p>Spectre tricks applications into accessing sensitive data by using a technique called branch prediction. The attacker can create a situation where the processor speculatively executes instructions that access sensitive data, even though the data is not actually needed. The attacker can then extract this sensitive data from the processor&rsquo;s cache.</p>
+<p>Meltdown takes advantage of a similar technique, but instead of tricking applications, it tricks the processor into accessing sensitive data stored in the kernel. This allows the attacker to bypass the security measures that protect the kernel and access sensitive data stored in the memory of the affected device.</p>
+<h2 id="protecting-against-spectre-and-meltdown">Protecting against Spectre and Meltdown</h2>
+<p>The good news is that there are ways to protect against Spectre and Meltdown. The most effective solution is to apply software patches and updates provided by the operating system and device manufacturers. These patches and updates will close the vulnerabilities that allow attackers to exploit Spectre and Meltdown.</p>
+<p>In addition to applying software patches, there are other steps that can be taken to reduce the risk of attack. For example, using anti-virus software and firewalls can help to prevent attackers from exploiting these vulnerabilities.</p>
+<p>It&rsquo;s also important to be aware of potential attacks and to be vigilant when using potentially vulnerable devices. Avoiding suspicious websites and email attachments, and keeping your software and operating system up-to-date, can also help to protect against Spectre and Meltdown.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Spectre and Meltdown were two of the biggest security vulnerabilities to hit the computing world in recent years. They affected almost every device, from laptops and desktops to smartphones and cloud servers. By understanding how they work and taking steps to protect against them, you can reduce the risk of attack and keep your sensitive information safe.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2020-06-17</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/spectre_and_meltdown_processor_vulnerabilities_explained/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" data-title="Spectre and Meltdown: Processor Vulnerabilities Explained" data-hashtags="Spectre,Meltdown,Hardware,Vulnerability"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" data-hashtag="Spectre"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" data-title="Spectre and Meltdown: Processor Vulnerabilities Explained" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" data-title="Spectre and Meltdown: Processor Vulnerabilities Explained"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Buffer" data-sharer="buffer" data-url="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" data-title="Spectre and Meltdown: Processor Vulnerabilities Explained" data-picture="/images/spectre_meltdown.jpg"><i class="fab fa-buffer fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" data-title="Spectre and Meltdown: Processor Vulnerabilities Explained"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" data-title="Spectre and Meltdown: Processor Vulnerabilities Explained" data-image="/images/spectre_meltdown.jpg"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/spectre/">Spectre</a>,&nbsp;<a href="/tags/meltdown/">Meltdown</a>,&nbsp;<a href="/tags/hardware/">Hardware</a>,&nbsp;<a href="/tags/vulnerability/">Vulnerability</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/inline_hooking_a_technique_for_modifying_function_behavior/" class="prev" rel="prev" title="Inline Hooking: A Technique for Modifying Function Behavior"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Inline Hooking: A Technique for Modifying Function Behavior</a>
+            <a href="/discovering_lifes_purpose_through_memento_mori_reflections_on_self_expression/" class="next" rel="next" title="Discovering Life&#39;s Purpose Through Memento Mori: Reflections on Self-Expression">Discovering Life's Purpose Through Memento Mori: Reflections on Self-Expression<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script async src="https://www.googletagmanager.com/gtag/js?id=G-2K6FXB19TQ"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "G-2K6FXB19TQ");</script><script src="/js/jquery-3.6.3.min.js"></script><script src="/js/t.js"></script></div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Francesco</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

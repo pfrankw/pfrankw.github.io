@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Tor - Tag - Francesco.cc</title>
+        <link>https://francesco.cc/tags/tor/</link>
+        <description>Tor - Tag - Francesco.cc</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sat, 02 Jan 2021 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francesco.cc/tags/tor/" rel="self" type="application/rss+xml" /><item>
+    <title>Understanding the Tor protocol and its implementation</title>
+    <link>https://francesco.cc/understanding_the_tor_protocol_and_its_implementation/</link>
+    <pubDate>Sat, 02 Jan 2021 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/understanding_the_tor_protocol_and_its_implementation/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/onion.jpg" referrerpolicy="no-referrer">
+            </div>Introduction The Tor (The Onion Router) protocol is a widely used privacy-enhancing technology that enables anonymous communication on the internet. This open-source software routes internet traffic through a series of servers, called nodes, to conceal the user&rsquo;s location and identity.
+How it works Tor works by encrypting the user&rsquo;s internet traffic multiple times and passing it through a series of nodes, with each node decrypting only enough of the encryption to know the address of the next node in the circuit.]]></description>
+</item>
+</channel>
+</rss>

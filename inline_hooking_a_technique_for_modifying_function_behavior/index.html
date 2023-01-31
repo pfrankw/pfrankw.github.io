@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="robots" content="noodp" />
+        <title>Inline Hooking: A Technique for Modifying Function Behavior - Francesco.cc</title><meta name="Description" content="Francesco&#39;s Journey in Cybersecurity: Navigating the Challenges of IT Defense"><meta property="og:title" content="Inline Hooking: A Technique for Modifying Function Behavior" />
+<meta property="og:description" content="Introduction Inline hooking is a technique used to modify the behavior of functions in an application or operating system. It involves inserting code into the body of a function, and redirecting the flow of execution to the inserted code before or after the original function is executed.
+Inline hooking is often used in security-related applications, such as anti-virus software or intrusion detection systems, where it is necessary to monitor or alter the behavior of system-level functions." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" /><meta property="og:image" content="https://francesco.cc/images/logo.svg"/><meta property="article:section" content="posts" />
+<meta property="article:published_time" content="2019-09-22T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-09-22T00:00:00+00:00" /><meta property="og:site_name" content="Francesco.cc" />
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:image" content="https://francesco.cc/images/logo.svg"/>
+
+<meta name="twitter:title" content="Inline Hooking: A Technique for Modifying Function Behavior"/>
+<meta name="twitter:description" content="Introduction Inline hooking is a technique used to modify the behavior of functions in an application or operating system. It involves inserting code into the body of a function, and redirecting the flow of execution to the inserted code before or after the original function is executed.
+Inline hooking is often used in security-related applications, such as anti-virus software or intrusion detection systems, where it is necessary to monitor or alter the behavior of system-level functions."/>
+<meta name="application-name" content="Francesco.cc">
+<meta name="apple-mobile-web-app-title" content="Francesco.cc"><meta name="theme-color" content="#ffffff"><meta name="msapplication-TileColor" content="#da532c"><link rel="icon" href="/images/logo.svg"><link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png"><link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5"><link rel="manifest" href="/site.webmanifest"><link rel="canonical" href="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" /><link rel="prev" href="https://francesco.cc/introducing_ssdt_and_iat_hooking_the_basics/" /><link rel="next" href="https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/" /><link rel="stylesheet" href="/css/style.min.css"><link rel="preload" href="/lib/fontawesome-free/all.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/fontawesome-free/all.min.css"></noscript><link rel="preload" href="/lib/animate/animate.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="/lib/animate/animate.min.css"></noscript><script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Inline Hooking: A Technique for Modifying Function Behavior",
+        "inLanguage": "en",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https:\/\/francesco.cc\/inline_hooking_a_technique_for_modifying_function_behavior\/"
+        },"genre": "posts","keywords": "Windows, hacking, hooking","wordcount":  458 ,
+        "url": "https:\/\/francesco.cc\/inline_hooking_a_technique_for_modifying_function_behavior\/","datePublished": "2019-09-22T00:00:00+00:00","dateModified": "2019-09-22T00:00:00+00:00","publisher": {
+            "@type": "Organization",
+            "name": "Francesco"},"author": {
+                "@type": "Person",
+                "name": "Francesco"
+            },"description": ""
+    }
+    </script></head>
+    <body data-header-desktop="fixed" data-header-mobile="auto"><script type="text/javascript">(window.localStorage && localStorage.getItem('theme') ? localStorage.getItem('theme') === 'dark' : ('dark' === 'auto' ? window.matchMedia('(prefers-color-scheme: dark)').matches : 'dark' === 'dark')) && document.body.setAttribute('theme', 'dark');</script>
+
+        <div id="mask"></div><div class="wrapper"><header class="desktop" id="header-desktop">
+    <div class="header-wrapper">
+        <div class="header-title">
+            <a href="/" title="Francesco.cc"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.svg"
+        data-srcset="/images/logo.svg, /images/logo.svg 1.5x, /images/logo.svg 2x"
+        data-sizes="auto"
+        alt="/images/logo.svg"
+        title="/images/logo.svg" />Francesco.cc</a>
+        </div>
+        <div class="menu">
+            <div class="menu-inner"><a class="menu-item" href="/about/" title="About"> About </a><a class="menu-item" href="/posts/" title="Posts"> Posts </a><a class="menu-item" href="/tags/" title="Tags"> Tags </a><a class="menu-item" href="/categories/" title="Categories"> Categories </a><span class="menu-item delimiter"></span><span class="menu-item search" id="search-desktop">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-desktop">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-desktop" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-desktop" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-desktop">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </span><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                    <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+                </a></div>
+        </div>
+    </div>
+</header><header class="mobile" id="header-mobile">
+    <div class="header-container">
+        <div class="header-wrapper">
+            <div class="header-title">
+                <a href="/" title="Francesco.cc"><img
+        class="lazyload logo"
+        src="/svg/loading.min.svg"
+        data-src="/images/logo.svg"
+        data-srcset="/images/logo.svg, /images/logo.svg 1.5x, /images/logo.svg 2x"
+        data-sizes="auto"
+        alt="/images/logo.svg"
+        title="/images/logo.svg" />Francesco.cc</a>
+            </div>
+            <div class="menu-toggle" id="menu-toggle-mobile">
+                <span></span><span></span><span></span>
+            </div>
+        </div>
+        <div class="menu" id="menu-mobile"><div class="search-wrapper">
+                    <div class="search mobile" id="search-mobile">
+                        <input type="text" placeholder="Search titles or contents..." id="search-input-mobile">
+                        <a href="javascript:void(0);" class="search-button search-toggle" id="search-toggle-mobile" title="Search">
+                            <i class="fas fa-search fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <a href="javascript:void(0);" class="search-button search-clear" id="search-clear-mobile" title="Clear">
+                            <i class="fas fa-times-circle fa-fw" aria-hidden="true"></i>
+                        </a>
+                        <span class="search-button search-loading" id="search-loading-mobile">
+                            <i class="fas fa-spinner fa-fw fa-spin" aria-hidden="true"></i>
+                        </span>
+                    </div>
+                    <a href="javascript:void(0);" class="search-cancel" id="search-cancel-mobile">
+                        Cancel
+                    </a>
+                </div><a class="menu-item" href="/about/" title="About">About</a><a class="menu-item" href="/posts/" title="Posts">Posts</a><a class="menu-item" href="/tags/" title="Tags">Tags</a><a class="menu-item" href="/categories/" title="Categories">Categories</a><a href="javascript:void(0);" class="menu-item theme-switch" title="Switch Theme">
+                <i class="fas fa-adjust fa-fw" aria-hidden="true"></i>
+            </a></div>
+    </div>
+</header><div class="search-dropdown desktop">
+        <div id="search-dropdown-desktop"></div>
+    </div>
+    <div class="search-dropdown mobile">
+        <div id="search-dropdown-mobile"></div>
+    </div><main class="main">
+                <div class="container"><div class="toc" id="toc-auto">
+            <h2 class="toc-title">Contents</h2>
+            <div class="toc-content" id="toc-content-auto"></div>
+        </div><article class="page single"><h1 class="single-title animate__animated animate__flipInX">Inline Hooking: A Technique for Modifying Function Behavior</h1><div class="post-meta">
+            <div class="post-meta-line"><span class="post-author"><a href="/" title="Author" rel="author" class="author"><i class="fas fa-user-circle fa-fw" aria-hidden="true"></i>Francesco</a></span></div>
+            <div class="post-meta-line"><i class="far fa-calendar-alt fa-fw" aria-hidden="true"></i>&nbsp;<time datetime="2019-09-22">2019-09-22</time>&nbsp;<i class="fas fa-pencil-alt fa-fw" aria-hidden="true"></i>&nbsp;458 words&nbsp;
+                <i class="far fa-clock fa-fw" aria-hidden="true"></i>&nbsp;3 minutes&nbsp;</div>
+        </div><div class="featured-image"><img
+        class="lazyload"
+        src="/svg/loading.min.svg"
+        data-src="/images/inline_hooking.jpg"
+        data-srcset="/images/inline_hooking.jpg, /images/inline_hooking.jpg 1.5x, /images/inline_hooking.jpg 2x"
+        data-sizes="auto"
+        alt="/images/inline_hooking.jpg"
+        title="/images/inline_hooking.jpg" /></div><div class="details toc" id="toc-static"  data-kept="">
+                <div class="details-summary toc-title">
+                    <span>Contents</span>
+                    <span><i class="details-icon fas fa-angle-right" aria-hidden="true"></i></span>
+                </div>
+                <div class="details-content toc-content" id="toc-content-static"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#introduction">Introduction</a></li>
+    <li><a href="#sample-code">Sample code</a></li>
+    <li><a href="#conclusion">Conclusion</a></li>
+  </ul>
+</nav></div>
+            </div><div class="content" id="content"><h2 id="introduction">Introduction</h2>
+<p>Inline hooking is a technique used to modify the behavior of functions in an application or operating system. It involves inserting code into the body of a function, and redirecting the flow of execution to the inserted code before or after the original function is executed.</p>
+<p>Inline hooking is often used in security-related applications, such as anti-virus software or intrusion detection systems, where it is necessary to monitor or alter the behavior of system-level functions. It can also be used for debugging, profiling, or instrumentation purposes, where it is necessary to collect information about the execution of a function.</p>
+<p>Inline hooking works by overwriting the first few bytes of the target function with a JMP (jump) instruction, which redirects the flow of execution to the hook function. The hook function can then perform additional actions before or after calling the original function.</p>
+<h2 id="sample-code">Sample code</h2>
+<div class="highlight"><div class="chroma">
+<table class="lntable"><tr><td class="lntd">
+<pre tabindex="0" class="chroma"><code><span class="lnt"> 1
+</span><span class="lnt"> 2
+</span><span class="lnt"> 3
+</span><span class="lnt"> 4
+</span><span class="lnt"> 5
+</span><span class="lnt"> 6
+</span><span class="lnt"> 7
+</span><span class="lnt"> 8
+</span><span class="lnt"> 9
+</span><span class="lnt">10
+</span><span class="lnt">11
+</span><span class="lnt">12
+</span><span class="lnt">13
+</span><span class="lnt">14
+</span><span class="lnt">15
+</span><span class="lnt">16
+</span><span class="lnt">17
+</span><span class="lnt">18
+</span><span class="lnt">19
+</span><span class="lnt">20
+</span><span class="lnt">21
+</span><span class="lnt">22
+</span><span class="lnt">23
+</span><span class="lnt">24
+</span><span class="lnt">25
+</span><span class="lnt">26
+</span><span class="lnt">27
+</span><span class="lnt">28
+</span><span class="lnt">29
+</span><span class="lnt">30
+</span><span class="lnt">31
+</span><span class="lnt">32
+</span><span class="lnt">33
+</span><span class="lnt">34
+</span><span class="lnt">35
+</span><span class="lnt">36
+</span><span class="lnt">37
+</span><span class="lnt">38
+</span></code></pre></td>
+<td class="lntd">
+<pre tabindex="0" class="chroma"><code class="language-c" data-lang="c"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;windows.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;stdio.h&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="k">typedef</span> <span class="nf">int</span> <span class="p">(</span><span class="n">WINAPI</span> <span class="o">*</span> <span class="n">MessageBoxW_t</span><span class="p">)(</span><span class="n">HWND</span><span class="p">,</span> <span class="n">LPCWSTR</span><span class="p">,</span> <span class="n">LPCWSTR</span><span class="p">,</span> <span class="n">UINT</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="n">MessageBoxW_t</span> <span class="n">originalMessageBoxW</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="n">WINAPI</span> <span class="nf">hookedMessageBoxW</span><span class="p">(</span><span class="n">HWND</span> <span class="n">hWnd</span><span class="p">,</span> <span class="n">LPCWSTR</span> <span class="n">lpText</span><span class="p">,</span> <span class="n">LPCWSTR</span> <span class="n">lpCaption</span><span class="p">,</span> <span class="n">UINT</span> <span class="n">uType</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;MessageBoxW Hooked!</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Text: %ls</span><span class="se">\n</span><span class="s">Caption: %ls</span><span class="se">\n</span><span class="s">Type: %d</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">,</span> <span class="n">lpText</span><span class="p">,</span> <span class="n">lpCaption</span><span class="p">,</span> <span class="n">uType</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nf">originalMessageBoxW</span><span class="p">(</span><span class="n">hWnd</span><span class="p">,</span> <span class="sa">L</span><span class="s">&#34;Hooked!&#34;</span><span class="p">,</span> <span class="n">lpCaption</span><span class="p">,</span> <span class="n">uType</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">HMODULE</span> <span class="n">hUser32</span> <span class="o">=</span> <span class="nf">LoadLibraryW</span><span class="p">(</span><span class="sa">L</span><span class="s">&#34;user32.dll&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">hUser32</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Could not load user32.dll</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="n">originalMessageBoxW</span> <span class="o">=</span> <span class="p">(</span><span class="n">MessageBoxW_t</span><span class="p">)</span><span class="nf">GetProcAddress</span><span class="p">(</span><span class="n">hUser32</span><span class="p">,</span> <span class="s">&#34;MessageBoxW&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">if</span> <span class="p">(</span><span class="n">originalMessageBoxW</span> <span class="o">==</span> <span class="nb">NULL</span><span class="p">)</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">        <span class="nf">printf</span><span class="p">(</span><span class="s">&#34;Could not find MessageBoxW</span><span class="se">\n</span><span class="s">&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">        <span class="k">return</span> <span class="mi">1</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="n">DWORD</span> <span class="n">oldProtect</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">VirtualProtect</span><span class="p">(</span><span class="n">originalMessageBoxW</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">PAGE_EXECUTE_READWRITE</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">oldProtect</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="kt">unsigned</span> <span class="kt">char</span> <span class="n">JMP</span><span class="p">[</span><span class="mi">5</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="mh">0xE9</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">,</span> <span class="mh">0x00</span><span class="p">};</span>
+</span></span><span class="line"><span class="cl">    <span class="n">DWORD</span> <span class="n">relativeAddress</span> <span class="o">=</span> <span class="p">(</span><span class="n">DWORD</span><span class="p">)</span><span class="o">&amp;</span><span class="n">hookedMessageBoxW</span> <span class="o">-</span> <span class="p">(</span><span class="n">DWORD</span><span class="p">)</span><span class="n">originalMessageBoxW</span> <span class="o">-</span> <span class="mi">5</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">memcpy</span><span class="p">(</span><span class="o">&amp;</span><span class="n">JMP</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="o">&amp;</span><span class="n">relativeAddress</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">DWORD</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">memcpy</span><span class="p">(</span><span class="n">originalMessageBoxW</span><span class="p">,</span> <span class="n">JMP</span><span class="p">,</span> <span class="k">sizeof</span><span class="p">(</span><span class="n">JMP</span><span class="p">));</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl">    <span class="nf">VirtualProtect</span><span class="p">(</span><span class="n">originalMessageBoxW</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="n">oldProtect</span><span class="p">,</span> <span class="o">&amp;</span><span class="n">oldProtect</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">MessageBoxW</span><span class="p">(</span><span class="nb">NULL</span><span class="p">,</span> <span class="sa">L</span><span class="s">&#34;Test&#34;</span><span class="p">,</span> <span class="sa">L</span><span class="s">&#34;Test&#34;</span><span class="p">,</span> <span class="n">MB_OK</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>One of the benefits of inline hooking is that it does not require any changes to the original code, making it a convenient way to modify the behavior of an application or operating system. It also does not require any special privileges, as it operates in user-mode, and can be easily removed or modified as needed.</p>
+<p>However, inline hooking can also be difficult to implement correctly, as it requires a deep understanding of the target function and the underlying system. It also requires careful consideration of the security implications of modifying the behavior of system-level functions, as it can potentially introduce vulnerabilities or stability issues.</p>
+<h2 id="conclusion">Conclusion</h2>
+<p>Inline hooking is a powerful technique for modifying the behavior of functions in an application or operating system. It provides a convenient way to implement custom behavior, without requiring any changes to the original code. However, it also requires careful consideration of the security implications and the technical challenges of correctly implementing the hook.</p>
+</div><div class="post-footer" id="post-footer">
+    <div class="post-info">
+        <div class="post-info-line">
+            <div class="post-info-mod">
+                <span>Updated on 2019-09-22</span>
+            </div></div>
+        <div class="post-info-line">
+            <div class="post-info-md"><span>
+                            <a class="link-to-markdown" href="/inline_hooking_a_technique_for_modifying_function_behavior/index.md" target="_blank">Read Markdown</a>
+                        </span></div>
+            <div class="post-info-share">
+                <span><a href="javascript:void(0);" title="Share on Twitter" data-sharer="twitter" data-url="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" data-title="Inline Hooking: A Technique for Modifying Function Behavior" data-hashtags="Windows,hacking,hooking"><i class="fab fa-twitter fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Facebook" data-sharer="facebook" data-url="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" data-hashtag="Windows"><i class="fab fa-facebook-square fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Linkedin" data-sharer="linkedin" data-url="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/"><i class="fab fa-linkedin fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on WhatsApp" data-sharer="whatsapp" data-url="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" data-title="Inline Hooking: A Technique for Modifying Function Behavior" data-web><i class="fab fa-whatsapp fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Hacker News" data-sharer="hackernews" data-url="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" data-title="Inline Hooking: A Technique for Modifying Function Behavior"><i class="fab fa-hacker-news fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Reddit" data-sharer="reddit" data-url="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/"><i class="fab fa-reddit fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Buffer" data-sharer="buffer" data-url="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" data-title="Inline Hooking: A Technique for Modifying Function Behavior" data-picture="/images/inline_hooking.jpg"><i class="fab fa-buffer fa-fw" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on Line" data-sharer="line" data-url="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" data-title="Inline Hooking: A Technique for Modifying Function Behavior"><i data-svg-src="/lib/simple-icons/icons/line.min.svg" aria-hidden="true"></i></a><a href="javascript:void(0);" title="Share on 微博" data-sharer="weibo" data-url="https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/" data-title="Inline Hooking: A Technique for Modifying Function Behavior" data-image="/images/inline_hooking.jpg"><i class="fab fa-weibo fa-fw" aria-hidden="true"></i></a></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="post-info-more">
+        <section class="post-tags"><i class="fas fa-tags fa-fw" aria-hidden="true"></i>&nbsp;<a href="/tags/windows/">Windows</a>,&nbsp;<a href="/tags/hacking/">hacking</a>,&nbsp;<a href="/tags/hooking/">hooking</a></section>
+        <section>
+            <span><a href="javascript:void(0);" onclick="window.history.back();">Back</a></span>&nbsp;|&nbsp;<span><a href="/">Home</a></span>
+        </section>
+    </div>
+
+    <div class="post-nav"><a href="/introducing_ssdt_and_iat_hooking_the_basics/" class="prev" rel="prev" title="Introducing SSDR and IAT hooking: The basics"><i class="fas fa-angle-left fa-fw" aria-hidden="true"></i>Introducing SSDR and IAT hooking: The basics</a>
+            <a href="/spectre_and_meltdown_processor_vulnerabilities_explained/" class="next" rel="next" title="Spectre and Meltdown: Processor Vulnerabilities Explained">Spectre and Meltdown: Processor Vulnerabilities Explained<i class="fas fa-angle-right fa-fw" aria-hidden="true"></i></a></div>
+</div>
+</article></div>
+            </main><footer class="footer">
+        <div class="footer-container"><div class="footer-line"><script async src="https://www.googletagmanager.com/gtag/js?id=G-2K6FXB19TQ"></script><script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag("js", new Date()); gtag("config", "G-2K6FXB19TQ");</script><script src="/js/jquery-3.6.3.min.js"></script><script src="/js/t.js"></script></div><div class="footer-line" itemscope itemtype="http://schema.org/CreativeWork"><i class="far fa-copyright fa-fw" aria-hidden="true"></i><span itemprop="copyrightYear">2023 - 2024</span><span class="author" itemprop="copyrightHolder">&nbsp;<a href="/" target="_blank">Francesco</a></span>&nbsp;|&nbsp;<span class="license"><a rel="license external nofollow noopener noreffer" href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank">CC BY-NC 4.0</a></span></div>
+        </div>
+    </footer></div>
+
+        <div id="fixed-buttons"><a href="#" id="back-to-top" class="fixed-button" title="Back to Top">
+                <i class="fas fa-arrow-up fa-fw" aria-hidden="true"></i>
+            </a><a href="#" id="view-comments" class="fixed-button" title="View Comments">
+                <i class="fas fa-comment fa-fw" aria-hidden="true"></i>
+            </a>
+        </div><link rel="stylesheet" href="/lib/katex/katex.min.css"><link rel="stylesheet" href="/lib/cookieconsent/cookieconsent.min.css"><script type="text/javascript" src="/lib/autocomplete/autocomplete.min.js"></script><script type="text/javascript" src="/lib/lunr/lunr.min.js"></script><script type="text/javascript" src="/lib/lazysizes/lazysizes.min.js"></script><script type="text/javascript" src="/lib/clipboard/clipboard.min.js"></script><script type="text/javascript" src="/lib/sharer/sharer.min.js"></script><script type="text/javascript" src="/lib/katex/katex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/auto-render.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/copy-tex.min.js"></script><script type="text/javascript" src="/lib/katex/contrib/mhchem.min.js"></script><script type="text/javascript" src="/lib/cookieconsent/cookieconsent.min.js"></script><script type="text/javascript">window.config={"code":{"copyTitle":"Copy to clipboard","maxShownLines":50},"comment":{},"cookieconsent":{"content":{"dismiss":"Got it!","link":"Learn more","message":"This website uses Cookies to improve your experience."},"enable":true,"palette":{"button":{"background":"#f0f0f0"},"popup":{"background":"#1aa3ff"}},"theme":"edgeless"},"math":{"delimiters":[{"display":true,"left":"$$","right":"$$"},{"display":true,"left":"\\[","right":"\\]"},{"display":true,"left":"\\begin{equation}","right":"\\end{equation}"},{"display":true,"left":"\\begin{equation*}","right":"\\end{equation*}"},{"display":true,"left":"\\begin{align}","right":"\\end{align}"},{"display":true,"left":"\\begin{align*}","right":"\\end{align*}"},{"display":true,"left":"\\begin{alignat}","right":"\\end{alignat}"},{"display":true,"left":"\\begin{alignat*}","right":"\\end{alignat*}"},{"display":true,"left":"\\begin{gather}","right":"\\end{gather}"},{"display":true,"left":"\\begin{CD}","right":"\\end{CD}"},{"display":false,"left":"$","right":"$"},{"display":false,"left":"\\(","right":"\\)"}],"strict":false},"search":{"highlightTag":"em","lunrIndexURL":"/index.json","maxResultLength":10,"noResultsFound":"No results found","snippetLength":30,"type":"lunr"}};</script><script type="text/javascript" src="/js/theme.min.js"></script></body>
+</html>

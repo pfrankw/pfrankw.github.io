@@ -1,0 +1,29 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>Privacy - Tag - Francesco.cc</title>
+        <link>https://francesco.cc/tags/privacy/</link>
+        <description>Privacy - Tag - Francesco.cc</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 14 Mar 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francesco.cc/tags/privacy/" rel="self" type="application/rss+xml" /><item>
+    <title>Exploring the Hidden Wiki: A Gateway to the Dark Web</title>
+    <link>https://francesco.cc/exploring_the_hidden_wiki_a_gateway_to_the_dark_web/</link>
+    <pubDate>Thu, 14 Mar 2024 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/exploring_the_hidden_wiki_a_gateway_to_the_dark_web/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/onions.jpg" referrerpolicy="no-referrer">
+            </div>Exploring the Hidden Wiki: A Gateway to the Dark Web In the realm of the internet lies a mysterious underworld known as the Dark Web. Hidden from conventional search engines and accessible only through specialized software, the Dark Web harbors a plethora of hidden services, illicit marketplaces, and anonymous communication channels. At the heart of this clandestine network lies the enigmatic Hidden Wiki.
+What is the Hidden Wiki? The Hidden Wiki serves as a directory of links to various websites and services operating within the Dark Web.]]></description>
+</item>
+<item>
+    <title>Understanding the Tor protocol and its implementation</title>
+    <link>https://francesco.cc/understanding_the_tor_protocol_and_its_implementation/</link>
+    <pubDate>Sat, 02 Jan 2021 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/understanding_the_tor_protocol_and_its_implementation/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/onion.jpg" referrerpolicy="no-referrer">
+            </div>Introduction The Tor (The Onion Router) protocol is a widely used privacy-enhancing technology that enables anonymous communication on the internet. This open-source software routes internet traffic through a series of servers, called nodes, to conceal the user&rsquo;s location and identity.
+How it works Tor works by encrypting the user&rsquo;s internet traffic multiple times and passing it through a series of nodes, with each node decrypting only enough of the encryption to know the address of the next node in the circuit.]]></description>
+</item>
+</channel>
+</rss>

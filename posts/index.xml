@@ -1,0 +1,119 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>All Posts - Francesco.cc</title>
+        <link>https://francesco.cc/posts/</link>
+        <description>All Posts | Francesco.cc</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Thu, 14 Mar 2024 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francesco.cc/posts/" rel="self" type="application/rss+xml" /><item>
+    <title>Exploring the Hidden Wiki: A Gateway to the Dark Web</title>
+    <link>https://francesco.cc/exploring_the_hidden_wiki_a_gateway_to_the_dark_web/</link>
+    <pubDate>Thu, 14 Mar 2024 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/exploring_the_hidden_wiki_a_gateway_to_the_dark_web/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/onions.jpg" referrerpolicy="no-referrer">
+            </div>Exploring the Hidden Wiki: A Gateway to the Dark Web In the realm of the internet lies a mysterious underworld known as the Dark Web. Hidden from conventional search engines and accessible only through specialized software, the Dark Web harbors a plethora of hidden services, illicit marketplaces, and anonymous communication channels. At the heart of this clandestine network lies the enigmatic Hidden Wiki.
+What is the Hidden Wiki? The Hidden Wiki serves as a directory of links to various websites and services operating within the Dark Web.]]></description>
+</item>
+<item>
+    <title>An overview of the Portable Executable (PE) File Structure</title>
+    <link>https://francesco.cc/understanding_the_portable_executable_file_structure/</link>
+    <pubDate>Sun, 12 Jun 2022 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/understanding_the_portable_executable_file_structure/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/pe_lego.jpg" referrerpolicy="no-referrer">
+            </div>Introduction Portable Executable (PE) files are the standard file format for executables and dynamic-link libraries (DLLs) in the Windows operating system. In this article, we will discuss the structure of PE files and how it is used by the Windows operating system to execute and load applications.
+What is a PE File? A Portable Executable (PE) file is a binary file format used by Microsoft Windows operating systems. PE files contain executable code, resources, and metadata required to run an application or library in Windows.]]></description>
+</item>
+<item>
+    <title>The SolarWinds Supply Chain Attack: Understanding the Threat and Protecting Your Organization</title>
+    <link>https://francesco.cc/the_solarwinds_supply_chain_attack_understanding_the_threat_and_protecting_your_organization/</link>
+    <pubDate>Wed, 13 Jan 2021 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/the_solarwinds_supply_chain_attack_understanding_the_threat_and_protecting_your_organization/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/sunburst.jpg" referrerpolicy="no-referrer">
+            </div>Introduction The SolarWinds supply chain attack, also known as the &ldquo;Sunburst&rdquo; attack, was a sophisticated cyber attack that took place in 2020. This attack used a sophisticated piece of malware that was embedded in a software update for the SolarWinds Orion network monitoring platform. The malware was used to compromise a large number of government and private organizations across the world.
+The Attack in Detail The attackers used a multi-stage approach to carry out this attack.]]></description>
+</item>
+<item>
+    <title>Understanding the Tor protocol and its implementation</title>
+    <link>https://francesco.cc/understanding_the_tor_protocol_and_its_implementation/</link>
+    <pubDate>Sat, 02 Jan 2021 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/understanding_the_tor_protocol_and_its_implementation/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/onion.jpg" referrerpolicy="no-referrer">
+            </div>Introduction The Tor (The Onion Router) protocol is a widely used privacy-enhancing technology that enables anonymous communication on the internet. This open-source software routes internet traffic through a series of servers, called nodes, to conceal the user&rsquo;s location and identity.
+How it works Tor works by encrypting the user&rsquo;s internet traffic multiple times and passing it through a series of nodes, with each node decrypting only enough of the encryption to know the address of the next node in the circuit.]]></description>
+</item>
+<item>
+    <title>Discovering Life&#39;s Purpose Through Memento Mori: Reflections on Self-Expression</title>
+    <link>https://francesco.cc/discovering_lifes_purpose_through_memento_mori_reflections_on_self_expression/</link>
+    <pubDate>Sun, 13 Dec 2020 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/discovering_lifes_purpose_through_memento_mori_reflections_on_self_expression/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/mementomori.jpg" referrerpolicy="no-referrer">
+            </div>Introduction This year has been a though one. And though times teach great things. I am somewhat scared of death, well not that much, but I am starting to respect it, and that&rsquo;s why I am going to write my thoughts here.
+&ldquo;Memento Mori&rdquo; would a stoic say.
+I always have been a very reserved guy, with all that opsec things in mind, but now the idea of leaving something about me, here on the internet, fascinates me.]]></description>
+</item>
+<item>
+    <title>Spectre and Meltdown: Processor Vulnerabilities Explained</title>
+    <link>https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/</link>
+    <pubDate>Wed, 17 Jun 2020 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/spectre_and_meltdown_processor_vulnerabilities_explained/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/spectre_meltdown.jpg" referrerpolicy="no-referrer">
+            </div>Introduction In January 2018, the world of computing was shaken by the discovery of two major security vulnerabilities: Spectre and Meltdown. These two vulnerabilities affected computer processors in almost every device, including laptops, desktops, smartphones, and even cloud servers. In this post, we&rsquo;ll take a closer look at what Spectre and Meltdown are, how they work, and what can be done to protect against them.
+What are Spectre and Meltdown? Spectre and Meltdown are two separate security vulnerabilities that exploit the way modern computer processors work.]]></description>
+</item>
+<item>
+    <title>Inline Hooking: A Technique for Modifying Function Behavior</title>
+    <link>https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/</link>
+    <pubDate>Sun, 22 Sep 2019 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/inline_hooking_a_technique_for_modifying_function_behavior/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/inline_hooking.jpg" referrerpolicy="no-referrer">
+            </div>Introduction Inline hooking is a technique used to modify the behavior of functions in an application or operating system. It involves inserting code into the body of a function, and redirecting the flow of execution to the inserted code before or after the original function is executed.
+Inline hooking is often used in security-related applications, such as anti-virus software or intrusion detection systems, where it is necessary to monitor or alter the behavior of system-level functions.]]></description>
+</item>
+<item>
+    <title>Introducing SSDR and IAT hooking: The basics</title>
+    <link>https://francesco.cc/introducing_ssdt_and_iat_hooking_the_basics/</link>
+    <pubDate>Mon, 15 Jul 2019 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/introducing_ssdt_and_iat_hooking_the_basics/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/hooks.jpg" referrerpolicy="no-referrer">
+            </div>Introduction Windows operating systems use system calls to interact with the underlying hardware and software components. System Service Dispatch Table (SSDT) hooking and Import Address Table (IAT) hooking are two techniques used to intercept and modify these system calls and imported functions, respectively.
+SSDT Hooking SSDT hooking involves modifying the SSDT, a table that contains the addresses of the system calls. This technique is useful for debugging, monitoring, and manipulating the behavior of the operating system and applications.]]></description>
+</item>
+<item>
+    <title>The WannaCry Ransomware Attack - Understanding its Impact and Lessons Learned</title>
+    <link>https://francesco.cc/the_wannacry_ransomware_attack_understanding_its_impact_and_lessons_learned/</link>
+    <pubDate>Sun, 03 Jun 2018 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/the_wannacry_ransomware_attack_understanding_its_impact_and_lessons_learned/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/ransom_lock.jpg" referrerpolicy="no-referrer">
+            </div>Introduction On May 12th, 2017, the world was shaken by a massive ransomware attack known as WannaCry. The attack infected over 200,000 computers in 150 countries, causing widespread disruption and financial losses. In this blog post, we&rsquo;ll explore the WannaCry attack, its aftermath, and the lessons we can learn from this incident to improve our cybersecurity practices.
+How WannaCry Spread Across the Globe WannaCry spread rapidly through a vulnerability in the Microsoft Windows operating system known as MS17-010.]]></description>
+</item>
+<item>
+    <title>Code Injection Techniques in Windows OS: A Step-by-Step Guide</title>
+    <link>https://francesco.cc/code_injection_techniques_in_windows_os/</link>
+    <pubDate>Sun, 27 May 2018 14:13:22 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/code_injection_techniques_in_windows_os/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/injection.jpg" referrerpolicy="no-referrer">
+            </div>Introduction The purpose of this document is to describe one of the most basic code injection techniques by using some of the APIs provided by the Windows operating system for process interaction.
+Code injection can be used in case it is necessary to make the detection of a payload more difficult within a compromised system, because it should not be sought inside a single process.
+It is possible to find an example of a more sophisticated use of the above technique into the “migrate” (ReflectiveLoader) feature of meterpreter, which completely moves the execution of the agent into a process chosen by the attacker.]]></description>
+</item>
+</channel>
+</rss>

@@ -1,0 +1,18 @@
+<rss xmlns:atom="http://www.w3.org/2005/Atom" version="2.0">
+    <channel>
+        <title>WannaCry - Tag - Francesco.cc</title>
+        <link>https://francesco.cc/tags/wannacry/</link>
+        <description>WannaCry - Tag - Francesco.cc</description>
+        <generator>Hugo -- gohugo.io</generator><language>en</language><lastBuildDate>Sun, 03 Jun 2018 00:00:00 &#43;0000</lastBuildDate><atom:link href="https://francesco.cc/tags/wannacry/" rel="self" type="application/rss+xml" /><item>
+    <title>The WannaCry Ransomware Attack - Understanding its Impact and Lessons Learned</title>
+    <link>https://francesco.cc/the_wannacry_ransomware_attack_understanding_its_impact_and_lessons_learned/</link>
+    <pubDate>Sun, 03 Jun 2018 00:00:00 &#43;0000</pubDate>
+    <author>Francesco</author>
+    <guid>https://francesco.cc/the_wannacry_ransomware_attack_understanding_its_impact_and_lessons_learned/</guid>
+    <description><![CDATA[<div class="featured-image">
+                <img src="/images/ransom_lock.jpg" referrerpolicy="no-referrer">
+            </div>Introduction On May 12th, 2017, the world was shaken by a massive ransomware attack known as WannaCry. The attack infected over 200,000 computers in 150 countries, causing widespread disruption and financial losses. In this blog post, we&rsquo;ll explore the WannaCry attack, its aftermath, and the lessons we can learn from this incident to improve our cybersecurity practices.
+How WannaCry Spread Across the Globe WannaCry spread rapidly through a vulnerability in the Microsoft Windows operating system known as MS17-010.]]></description>
+</item>
+</channel>
+</rss>
