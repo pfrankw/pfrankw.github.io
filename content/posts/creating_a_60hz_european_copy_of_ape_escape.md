@@ -30,7 +30,7 @@ To do this we will use the following tools:
 - `dumpsxiso` / https://github.com/Lameguy64/mkpsxiso
 - `mkpsxiso` / https://github.com/Lameguy64/mkpsxiso
 - `jPSXdec` / https://github.com/m35/jpsxdec
-- `aemt` / https://github.com/pfrankw/aemt
+- `aemt` / https://github.com/deade1e/aemt
 
 `dumpsxiso` is needed to **extract the iso content into a directory**.
 `mkpsxiso` is needed to **re-pack the ISO content** after modification have been made.
