@@ -1,5 +1,5 @@
 ---
-title: "Pentesting NFS4 from inside a container"
+title: "Relaying NFS4 from inside a container"
 date: 2025-07-19
 tags:
 - containers
@@ -49,7 +49,7 @@ This is what I see from the NFS host:
 
 ## Diagram of what happens
 
-![diagram](/images/nfs_pentesting_diagram.png)
+![diagram](/images/nfs_relaying_diagram.png)
 
 ## Lessons learned
 
